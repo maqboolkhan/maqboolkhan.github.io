@@ -1,0 +1,70 @@
+body {
+	font-family: 'Average Sans', sans-serif;
+	color: #444;
+}
+.title {
+	text-align: center;
+	padding: 20px;
+}
+.title img.pic {
+	border:solid 5px #FDFFD9;
+	border-radius: 50%;
+	box-shadow: 0 0 7px 1px #ccc ;
+	width: 100px;
+	height: 100px;
+}
+.title img.flag {
+	width: 20px;
+	height: 20px;
+}
+h1 {
+	font-family: 'Roboto Slab';
+}
+h1 i {
+	color : #454347;
+}
+
+.col ul li {
+	padding: 5px 5px 10px;
+	border-bottom: dotted 1px #ccc;
+}
+.col ul li a {
+	text-decoration: none;
+}
+.col table {
+	width: 100%;
+}
+.col table td {
+	padding: 3px 0;
+}
+.col table td i {
+	font-size: 14px;
+}
+.col table td i.icon-star {
+	color: #FF9B00;
+}
+.col table td i.icon-ok {
+	color: #42A69B;
+}
+.col table.projects tr td {
+	vertical-align: top;
+	padding: 8px;
+}
+ a {
+	color:#000;
+}
+footer {
+	position: fixed;
+	bottom: 0;
+	background-color: #fff;
+	text-align: center;
+	color: black;
+}
+.separator {
+	margin-bottom: 50px;
+}
+@media screen and (max-width: 720px) {
+	h1 {
+		text-align: center;
+	}
+}
