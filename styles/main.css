@@ -3,9 +3,23 @@ body {
 	color: #444;
 }
 .title {
+	line-height: 25px;
 	text-align: center;
 	padding: 20px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 }
+
+.description {
+	position: absolute;
+	top:100%;
+	height: 100%;
+} 
+
 .title img.pic {
 	border:solid 5px #FDFFD9;
 	border-radius: 50%;
@@ -25,6 +39,7 @@ h1 i {
 }
 
 .col ul li {
+	list-style: none;
 	padding: 5px 5px 10px;
 }
 .col ul li a {
@@ -52,16 +67,14 @@ h1 i {
  a {
 	color:#000;
 }
-footer {
-	position: fixed;
+.arrow {
+	position: absolute;
 	bottom: 0;
 	background-color: #fff;
 	text-align: center;
 	color: black;
 }
-.separator {
-	margin-bottom: 50px;
-}
+
 @media screen and (max-width: 720px) {
 	h1 {
 		text-align: center;
