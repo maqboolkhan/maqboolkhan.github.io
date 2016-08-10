@@ -73,7 +73,11 @@ footer {
 	text-align: center;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 768px) {
+	.title {
+		margin-bottom: 20%;
+		margin-top: 20%;
+	}
 	h1 {
 		text-align: center;
 	}
