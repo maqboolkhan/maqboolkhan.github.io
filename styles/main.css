@@ -40,7 +40,9 @@ h1 {
 h1 i {
 	color : #454347;
 }
-
+.col ul {
+	padding: 0;
+}
 .col ul li {
 	list-style: none;
 	padding: 5px 5px 10px;
@@ -69,6 +71,10 @@ h1 i {
 }
  a {
 	color:#000;
+	text-decoration: underline;
+}
+a:hover {
+	text-decoration: none;
 }
 .arrow {
 	color: black;
