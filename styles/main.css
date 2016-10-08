@@ -1,7 +1,16 @@
+html, body {
+	height: 100%;
+}
+
 body {
 	font-family: 'Average Sans', sans-serif;
 	color: #444;
 }
+
+.full-height {
+	height: 100%;
+}
+
 .title {
 	line-height: 25px;
 	text-align: center;
@@ -62,23 +71,9 @@ h1 i {
 	color:#000;
 }
 .arrow {
-	position: absolute;
-	bottom: 0;
-	text-align: center;
 	color: black;
-}
-
-footer {
-	margin-top: 100px;
-	text-align: center;
-}
-
-@media screen and (max-width: 768px) {
-	.title {
-		margin-bottom: 20%;
-		margin-top: 20%;
-	}
-	h1 {
-		text-align: center;
-	}
+	position: absolute; 
+	bottom: 0; 
+	left: 0; 
+	right: 0
 }
