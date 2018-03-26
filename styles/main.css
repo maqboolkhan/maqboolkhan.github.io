@@ -21,7 +21,7 @@ body {
 
 .description {
 	height: 100%;
-} 
+}
 
 .title img.pic {
 	border:solid 5px #FDFFD9;
@@ -29,10 +29,16 @@ body {
 	box-shadow: 0 0 7px 1px #ccc ;
 	width: 100px;
 	height: 100px;
+	margin-bottom: 5px;
 }
 .title img.flag {
 	width: 20px;
 	height: 20px;
+}
+.title p {
+	line-height: 20px;
+	margin-top: 3px;
+	margin-bottom: 0;
 }
 h1 {
 	font-family: 'Roboto Slab';
@@ -78,9 +84,9 @@ a:hover {
 }
 .arrow {
 	color: black;
-	position: absolute; 
-	bottom: 0; 
-	left: 0; 
+	position: absolute;
+	bottom: 0;
+	left: 0;
 	right: 0
 }
 
