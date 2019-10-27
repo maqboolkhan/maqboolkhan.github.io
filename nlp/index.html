@@ -7,7 +7,7 @@
 	<style type="text/css">
 		textarea {
 			border:1px solid #000;
-			width: 300px;
+			width: 100%;
 			height: 300px;
 			font-size: 16px;
 			padding: 2px 5px;
@@ -27,7 +27,7 @@
 				<br>
 				<textarea  id="ta" placeholder="Kindly write here some lines about your name, age and where do u live? please use english and its proper grammer"></textarea>
 				<br/>
-				<button type="button" class="btn btn-primary">Process</button>
+				<button type="button" class="btn btn-primary" id="bt">Process</button>
 				<br>
 				<table class="table">
 					<tr>
@@ -75,6 +75,7 @@
 
 	<script >
 		_("bt").onclick = function  () {
+			console.log('dd')
 			text = _("ta").value;
 
 			name_re = /(?:(?:my name is ?)|(?:I am ))([A-Za-z]+)/gi;
