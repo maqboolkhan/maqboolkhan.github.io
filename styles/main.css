@@ -51,7 +51,7 @@ h1 i {
 }
 .col ul li {
 	list-style: none;
-	padding: 5px 5px 10px;
+	padding: 5px 0;
 }
 .col ul li a {
 	text-decoration: none;
@@ -88,6 +88,15 @@ a:hover {
 	bottom: 0;
 	left: 0;
 	right: 0
+}
+
+section {
+	margin-top: 20px;
+}
+
+.skill-details {
+	padding-left: 30px !important;
+	color: #9E9E9E;
 }
 
 @media screen and (max-width: 768px) {
