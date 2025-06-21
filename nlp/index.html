@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Rule based NLP</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style type="text/css">
+		textarea {
+			border:1px solid #000;
+			width: 100%;
+			height: 300px;
+			font-size: 16px;
+			padding: 2px 5px;
+		}
+		.code {
+			background: #ccc;
+			padding: 5px;
+			font-size: 18px;
+			font-family: monospace;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 col-md-6">
+				<br>
+				<textarea  id="ta" placeholder="Kindly write here some lines about your name, age and where do u live? please use english and its proper grammer"></textarea>
+				<br/>
+				<button type="button" class="btn btn-primary" id="bt">Process</button>
+				<br>
+				<table class="table">
+					<tr>
+						<th>Property</th>
+						<th>Value</th>
+					</tr>
+					<tr>
+						<td>Name</td>
+						<td> <span id="name"></span> </td>
+					</tr>
+					<tr>
+						<td>Age</td>
+						<td> <span id="age"></span> </td>
+					</tr>
+					<tr>
+						<td>Your Living! </td>
+						<td> <span id="living"></span> </td>
+					</tr>
+				</table>
+			</div>
+			<div class="col-sm-12 col-md-6" col-md-6>
+				<br>
+				<h2>Explanation</h2>
+				<p>
+					It's small tool which I code when I was doing my bachelor's back in 2015.
+					It's simple demonstration of Rule based NLP. It uses regex to extract name, age & place you live.
+					Here are all Regular expression used here
+					<h4>Name</h4>
+					<p class="code">
+						/(?:(?:my name is ?)|(?:I am ))([A-Za-z]+)/gi
+					</p>
+					<h4>Age</h4>
+					<p class="code">
+						/(?:(\d+ ?){1})(?:years old)|(?:my age is ?)(\d+)/gi
+					</p>
+					<h4>place you live</h4>
+					<p class="code">
+						/live in (\w+)/gi
+					</p>
+
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<script >
+		_("bt").onclick = function  () {
+			console.log('dd')
+			text = _("ta").value;
+
+			name_re = /(?:(?:my name is ?)|(?:I am ))([A-Za-z]+)/gi;
+			try {
+				name = name_re.exec(text)[1].trim()
+			} catch(e){
+				name = "failed";
+			}
+
+			age_re = /(?:(\d+ ?){1})(?:years old)|(?:my age is ?)(\d+)/gi;
+			try {
+				res = age_re.exec(text)
+				age = res[1]
+				if(age == undefined)
+					age = res[2]
+			} catch(e) {
+				age = "failed";
+			}
+
+			living_re = /live in (\w+)/gi;
+			try {
+				living = living_re.exec(text)[1].trim()
+			} catch(e){
+				living = "failed";
+			}
+
+			_("name").innerHTML = name;
+			_("age").innerHTML = age
+			// age_re.exec(text))
+			_("living").innerHTML = living
+		}
+		function _ (id) {
+			return document.getElementById(id);
+		}
+	</script>
+</body>
+</html>

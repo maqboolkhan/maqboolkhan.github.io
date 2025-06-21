@@ -1,0 +1,106 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	font-family: 'Average Sans', sans-serif;
+	color: #444;
+}
+
+.full-height {
+	min-height: 100%;
+}
+
+.title {
+	line-height: 25px;
+	text-align: center;
+	padding: 20px;
+	margin-bottom: 10%;
+	margin-top: 10%;
+}
+
+.description {
+	height: 100%;
+}
+
+.title img.pic {
+	border:solid 5px #eeeeee;
+	border-radius: 50%;
+	box-shadow: 0 0 7px 1px #ccc ;
+	width: 100px;
+	height: 100px;
+	margin-bottom: 5px;
+}
+.title img.flag {
+	width: 20px;
+	height: 20px;
+}
+.title p {
+	line-height: 20px;
+	margin-top: 3px;
+	margin-bottom: 0;
+}
+h1 {
+	font-family: 'Roboto Slab';
+}
+h1 i {
+	color : #454347;
+}
+.col ul {
+	padding: 0;
+}
+.col ul li {
+	list-style: none;
+	padding: 5px 0;
+}
+.col ul li a {
+	text-decoration: none;
+}
+.col table {
+	width: 100%;
+}
+.col table td {
+	padding: 3px 0;
+}
+.col table td i {
+	font-size: 14px;
+}
+.col table td i.icon-star {
+	color: #FF9B00;
+}
+.col table td i.icon-ok {
+	color: #42A69B;
+}
+.col table.projects tr td {
+	vertical-align: top;
+	padding: 8px;
+}
+ a {
+	color:#000;
+	text-decoration: underline;
+}
+a:hover {
+	text-decoration: none;
+}
+.arrow {
+	color: black;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0
+}
+
+section {
+	margin-top: 20px;
+}
+
+.skill-details {
+	padding-left: 30px !important;
+	color: #9E9E9E;
+}
+
+@media screen and (max-width: 768px) {
+	h1 {
+			text-align: center;
+	}
+}
