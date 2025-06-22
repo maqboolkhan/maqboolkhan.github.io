@@ -1,6 +1,5 @@
 class PhysicalCardStack {
     constructor() {
-        this.sectionHeadings = ["Hi!", "Contact", "Experience", "Projects", "Skills", "Extras"];
         this.cards = document.querySelectorAll('.card');
         this.scrollHint = document.querySelector('.scroll-hint');
         this.scrollHint = document.querySelector('.scroll-hint');
@@ -39,11 +38,6 @@ class PhysicalCardStack {
         const cardProgress = this.scrollProgress * (this.totalCards - 1);
         const activeCard = Math.floor(cardProgress);
 
-        if (activeCard !== this.currentIndex && activeCard >= 0) {
-            const isNotLastCard = this.sectionHeadings[activeCard] !== this.sectionHeadings[this.totalCards - 1]            
-            this.currentIndex = activeCard;
-        }
-
         this.scrollHint.style.display = (this.scrollProgress >= 1)  ? 'none' : 'block';
 
         if (activeCard == 0 && this.title.textContent != "Hi!") {
@@ -60,27 +54,6 @@ class PhysicalCardStack {
                 this.title.textContent = "Maqbool";
             }, 500);
         }
-
-        
-
-        this.cards.forEach((card, index) => {
-            card.classList.remove('visible', 'coming', 'covering', 'covered');
-
-            if (index < cardProgress) {
-                card.classList.add('covered');
-                card.querySelector(".card-content").style.opacity = Math.max(1 - (cardProgress - index), 0.1);
-            } else if (index <= cardProgress + 1) {
-                if (index === Math.floor(cardProgress)) {
-                    card.classList.add('visible');
-                } else {
-                    const slideProgress = cardProgress - Math.floor(cardProgress);
-                    card.classList.add('covering');
-                    card.style.transform = `translateX(-50%) translateY(${(1 - slideProgress) * 100}vh)`;
-                }
-            } else {
-                card.classList.add('coming');
-            }
-        });
     }
 }
 
