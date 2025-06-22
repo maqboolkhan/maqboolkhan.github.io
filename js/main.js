@@ -2,8 +2,9 @@ class PhysicalCardStack {
     constructor() {
         this.sectionHeadings = ["Hi!", "Contact", "Experience", "Projects", "Skills", "Extras"];
         this.cards = document.querySelectorAll('.card');
-        this.progressActive = document.querySelector('.progress-dot.active');
-        this.progressNext = document.querySelector('.progress-dot.next');
+        this.scrollHint = document.querySelector('.scroll-hint');
+        this.scrollHint = document.querySelector('.scroll-hint');
+        this.title = document.getElementById('title');
         this.currentIndex = 0;
         this.totalCards = this.cards.length;
         this.scrollProgress = 0;
@@ -28,26 +29,6 @@ class PhysicalCardStack {
         });
     }
 
-    animateProgressText(newText, isNotLastCard) {
-        const oldSpan = this.progressActive.querySelector('.text');
-        const newSpan = document.createElement('span');
-        newSpan.className = 'text slide-in';
-
-        newSpan.textContent = newText;
-        this.progressActive.replaceChild(newSpan, oldSpan);
-
-        // Force reflow
-        newSpan.offsetWidth;
-
-        newSpan.classList.add('active');
-        oldSpan.classList.add('slide-out');
-        oldSpan.classList.add('active');
-
-
-        oldSpan.addEventListener('transitionend', () => oldSpan.remove(), { once: true });
-
-    }
-
     handleScroll() {
         const scrollTop = window.pageYOffset;
         const windowHeight = window.innerHeight;
@@ -59,24 +40,28 @@ class PhysicalCardStack {
         const activeCard = Math.floor(cardProgress);
 
         if (activeCard !== this.currentIndex && activeCard >= 0) {
-            const isNotLastCard = this.sectionHeadings[activeCard] !== this.sectionHeadings[this.totalCards - 1]
-
-            if (isNotLastCard) {
-                this.progressActive.querySelector("span").style.color = "#000";
-                this.progressNext.querySelector("span").style.color = "#9e9b9b";
-                // We dont want to update text of next dot if it is the last card
-                this.progressNext.querySelector('.text').textContent = this.sectionHeadings[activeCard + 1] || '';
-                this.animateProgressText(
-                    this.sectionHeadings[activeCard] || '',
-                    isNotLastCard
-                );
-            } else {
-                this.progressActive.querySelector("span").style.color = "#9e9b9b";
-                this.progressNext.querySelector("span").style.color = "#000";
-            }
-
+            const isNotLastCard = this.sectionHeadings[activeCard] !== this.sectionHeadings[this.totalCards - 1]            
             this.currentIndex = activeCard;
         }
+
+        this.scrollHint.style.display = (this.scrollProgress >= 1)  ? 'none' : 'block';
+
+        if (activeCard == 0 && this.title.textContent != "Hi!") {
+            this.title.style.opacity = 0;
+            setTimeout(() => {
+                this.title.textContent = "Hi!";
+                this.title.style.opacity = 1;
+            }, 500);
+        } 
+        if (activeCard == 1 && this.title.textContent != "Maqbool") {
+            this.title.style.opacity = 0;
+            setTimeout(() => {
+                this.title.style.opacity = 1;
+                this.title.textContent = "Maqbool";
+            }, 500);
+        }
+
+        
 
         this.cards.forEach((card, index) => {
             card.classList.remove('visible', 'coming', 'covering', 'covered');

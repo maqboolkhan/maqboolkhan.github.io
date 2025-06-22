@@ -39,6 +39,43 @@ img.flag {
 	text-align: right;
 }
 
+.main-title {
+	position: fixed;
+	top: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	flex-direction: column;
+	z-index: 100;
+	padding: 5px;
+}
+
+.main-title h1 {
+	text-align: center;
+	margin-bottom: 0;
+	transition: opacity 0.5s ease;
+	opacity: 1;
+}
+
+.scroll-hint {
+	text-align: center;
+	color: #b0aeae;
+	font-size: 0.9rem;
+	animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+	0%,
+	100% {
+		opacity: 0.4;
+	}
+
+	50% {
+		opacity: 1;
+	}
+} 
+
 .scroll-container {
 	height: 500vh;
 	position: relative;
@@ -177,38 +214,6 @@ table.skills td i.icon-star {
 	transform: translateX(-50%) translateY(0);
 }
 
-.progress {
-	position: fixed;
-	top: 30px;
-	left: 50%;
-	transform: translateX(-50%);
-	display: flex;
-	gap: 25px;
-	z-index: 100;
-	padding: 5px;
-}
-
-.progress-dot {
-	position: relative;
-	width: 100px;
-	height: 30px;
-	overflow: hidden;
-	text-align: center;
-	line-height: 30px;
-	transform: scale(1.5);
-}
-
-.progress-dot.next span {
-	color: #9e9b9b;
-}
-
-.progress-dot span {
-	position: absolute;
-	width: 100%;
-	left: 0;
-	transition: transform 0.4s ease-out, opacity 0.4s ease-out;
-}
-
 .footer {
 	padding: 50px 5px 10px;
 	position: absolute;
@@ -237,6 +242,10 @@ table.skills td i.icon-star {
 }
 
 @media (max-width: 768px) {
+	.main-title {
+			position: fixed;
+			top: 0;
+	}
 	.card {
 		width: 100%;
 	}
